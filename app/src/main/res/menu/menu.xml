@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:id="@+id/menuHome"
+        android:icon="@drawable/ic_smoke_sensor"
+        android:title="Home"/>
+
+    <item android:id="@+id/menuHumidity"
+        android:icon="@drawable/ic_smoke_sensor"
+        android:title="Humidity"/>
+
+    <item android:id="@+id/menuTemp"
+        android:icon="@drawable/ic_smoke_sensor"
+        android:title="Temperature"/>
+
+    <item android:id="@+id/menuWin"
+        android:icon="@drawable/ic_smoke_sensor"
+        android:title="Window Info"/>
+
+    <item android:id="@+id/menuCurtain"
+        android:icon="@drawable/ic_smoke_sensor"
+        android:title="Curtain Info"/>
+
+    <item android:id="@+id/menuRoom"
+        android:icon="@drawable/ic_smoke_sensor"
+        android:title="Room Info"/>
+
+    <item android:id="@+id/menuHistory"
+        android:icon="@drawable/ic_show"
+        android:title="History"/>
+
+    <item android:id="@+id/menu_logout"
+        android:icon="@drawable/ic_logout"
+        android:title="Logout"/>
+
+    <item android:id="@+id/menuExit"
+        android:icon="@drawable/ic_smoke_sensor"
+        android:title="Exit"/>
+
+</menu>

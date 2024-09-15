@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "147482680550",
+    "firebase_url": "https://auto-curtain-and-window-open-default-rtdb.firebaseio.com",
+    "project_id": "auto-curtain-and-window-open",
+    "storage_bucket": "auto-curtain-and-window-open.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:147482680550:android:aa6d8c00cf3b47df456f27",
+        "android_client_info": {
+          "package_name": "com.technogenis.autocurtainwindow"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEh7Miobwb7vD5ClwwADRWbJtCoefrZG4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
