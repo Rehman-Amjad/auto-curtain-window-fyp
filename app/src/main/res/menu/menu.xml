@@ -3,31 +3,31 @@
 
 
     <item android:id="@+id/menuHome"
-        android:icon="@drawable/ic_smoke_sensor"
+        android:icon="@drawable/home"
         android:title="Home"/>
 
     <item android:id="@+id/menuHumidity"
-        android:icon="@drawable/ic_smoke_sensor"
+        android:icon="@drawable/humidity"
         android:title="Humidity"/>
 
     <item android:id="@+id/menuTemp"
-        android:icon="@drawable/ic_smoke_sensor"
+        android:icon="@drawable/temperature"
         android:title="Temperature"/>
 
     <item android:id="@+id/menuWin"
-        android:icon="@drawable/ic_smoke_sensor"
+        android:icon="@drawable/window"
         android:title="Window Info"/>
 
     <item android:id="@+id/menuCurtain"
-        android:icon="@drawable/ic_smoke_sensor"
+        android:icon="@drawable/curtain"
         android:title="Curtain Info"/>
 
     <item android:id="@+id/menuRoom"
-        android:icon="@drawable/ic_smoke_sensor"
+        android:icon="@drawable/room"
         android:title="Room Info"/>
 
     <item android:id="@+id/menuHistory"
-        android:icon="@drawable/ic_show"
+        android:icon="@drawable/history"
         android:title="History"/>
 
     <item android:id="@+id/menu_logout"
@@ -35,7 +35,7 @@
         android:title="Logout"/>
 
     <item android:id="@+id/menuExit"
-        android:icon="@drawable/ic_smoke_sensor"
+        android:icon="@drawable/ic_switch"
         android:title="Exit"/>
 
 </menu>

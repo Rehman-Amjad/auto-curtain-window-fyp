@@ -18,8 +18,13 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.technogenis.autocurtainwindow.fragment.CurtainFragment;
+import com.technogenis.autocurtainwindow.fragment.HistoryFragment;
 import com.technogenis.autocurtainwindow.fragment.HomeFragment;
 import com.technogenis.autocurtainwindow.fragment.HumidityFragment;
+import com.technogenis.autocurtainwindow.fragment.RoomFragment;
+import com.technogenis.autocurtainwindow.fragment.TemperatureFragment;
+import com.technogenis.autocurtainwindow.fragment.WindowFragment;
 import com.technogenis.autocurtainwindow.start.LoginScreen;
 
 import com.google.android.material.navigation.NavigationView;
@@ -64,38 +69,42 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
 
-                if (item.getItemId() == R.id.menuHumidity){
-                    fragment = new HumidityFragment();
+                if (item.getItemId() == R.id.menuHome){
+                    fragment = new HomeFragment();
                     drayerLayout.closeDrawer(GravityCompat.START);
 
-                }
-                else if(item.getItemId() == R.id.menuTemp){
+                }else  if (item.getItemId() == R.id.menuHumidity){
                     fragment = new HumidityFragment();
+                    drayerLayout.closeDrawer(GravityCompat.START);
+                }
+
+                else if(item.getItemId() == R.id.menuTemp){
+                    fragment = new TemperatureFragment();
                     drayerLayout.closeDrawer(GravityCompat.START);
                 }
 
                 else if(item.getItemId() == R.id.menuWin){
-                    fragment = new HumidityFragment();
+                    fragment = new WindowFragment();
                     drayerLayout.closeDrawer(GravityCompat.START);
                 }
 
                 else if(item.getItemId() == R.id.menuCurtain){
-                    fragment = new HumidityFragment();
+                    fragment = new CurtainFragment();
                     drayerLayout.closeDrawer(GravityCompat.START);
                 }
 
                 else if(item.getItemId() == R.id.menuRoom){
-                    fragment = new HumidityFragment();
+                    fragment = new RoomFragment();
                     drayerLayout.closeDrawer(GravityCompat.START);
                 }
 
                 else if(item.getItemId() == R.id.menuHistory){
-                    fragment = new HumidityFragment();
+                    fragment = new HistoryFragment();
                     drayerLayout.closeDrawer(GravityCompat.START);
                 }
 
-                else if(item.getItemId() == R.id.menu_logout){
-                    fragment = new HumidityFragment();
+                else if(item.getItemId() == R.id.menuExit){
+                   System.exit(0);
                     drayerLayout.closeDrawer(GravityCompat.START);
                 }
                 else if(item.getItemId() == R.id.menu_logout){

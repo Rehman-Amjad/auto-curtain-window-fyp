@@ -1,14 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
     tools:context=".fragment.HumidityFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/back_image"-->
+<!--        android:layout_width="24dp"-->
+<!--        android:layout_height="24dp"-->
+
+<!--        android:src="@drawable/ic_arrow"-->
+<!--        app:tint="@color/black" />-->
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/Frozi"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-black"
+        android:textSize="18sp"
+        android:padding="9dp"
+        android:text="Humidity Sensor" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:contentDescription="@string/todo" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center|start"
+        >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_calender"
+            app:tint="@color/Frozi" />
+
+        <TextView
+            android:id="@+id/date_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textAlignment="textStart"
+            android:textSize="14sp"
+            android:padding="9dp"
+            android:text="Date: please wait" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center|start"
+        >
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/clock"
+            app:tint="@color/Frozi" />
+
+        <TextView
+            android:id="@+id/time_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textAlignment="textStart"
+            android:textSize="14sp"
+            android:padding="9dp"
+            android:text="Time: please wait" />
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/humidityValue_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textAlignment="textStart"
+        android:textSize="14sp"
+        android:padding="9dp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:text="Humidity sensor value: please wait" />
+
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textAlignment="textStart"
+        android:textSize="14sp"
+        android:padding="9dp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:text="Set Humidity value" />
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/ed_humidity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/view_background"
+        android:hint="Set Humidity value"
+        android:drawablePadding="10dp"
+        android:inputType="textPersonName"
+        android:padding="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="#B7FFFFFF"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/Frozi"
+        android:padding="15dp"
+        android:layout_gravity="center"
+        android:text="SAVE"
+        android:textColor="@color/white"
+        android:elevation="5dp"
+        app:cornerRadius="10dp" />
+
+</LinearLayout>
