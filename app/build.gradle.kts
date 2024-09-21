@@ -45,4 +45,7 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     implementation (platform(libs.firebase.bom))
     implementation (libs.firebase.analytics)
+
+    implementation (libs.glide)
+    annotationProcessor (libs.compiler)
 }

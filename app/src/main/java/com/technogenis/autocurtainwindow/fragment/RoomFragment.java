@@ -30,10 +30,10 @@ import java.io.ByteArrayOutputStream;
 public class RoomFragment extends Fragment {
 
 
-    TextView date_text,time_text;
+    TextView date_text,time_text,humidityValue_text,temp_text,ldr_text,id_text,gas_text;
     ImageView image;
 
-    String date,time,imageUrl;
+    String date,time,imageUrl,humidity,temperature,ldr,gas,id;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,6 +51,11 @@ public class RoomFragment extends Fragment {
         date_text = view.findViewById(R.id.date_text);
         time_text = view.findViewById(R.id.time_text);
         image = view.findViewById(R.id.image);
+        humidityValue_text = view.findViewById(R.id.humidityValue_text);
+        temp_text = view.findViewById(R.id.temp_text);
+        ldr_text = view.findViewById(R.id.ldr_text);
+        id_text = view.findViewById(R.id.id_text);
+        gas_text = view.findViewById(R.id.gas_text);
     }
 
     private void currentValue() {
@@ -66,10 +71,20 @@ public class RoomFragment extends Fragment {
                     date = snapshot.child("Dated").getValue(String.class);
                     time = snapshot.child("Timed").getValue(String.class);
                     imageUrl = snapshot.child("Img").getValue(String.class);
+                    humidity = snapshot.child("Humidity").getValue(String.class);
+                    temperature = snapshot.child("Temperature").getValue(String.class);
+                    ldr = snapshot.child("LDR").getValue(String.class);
+                    gas = snapshot.child("Gas").getValue(String.class);
+                    id = snapshot.child("Id").getValue(String.class);
 
                     showImage(imageUrl);
                     date_text.setText("Date: "+date);
                     time_text.setText("Time: "+time);
+                    humidityValue_text.setText("Humidity: "+humidity);
+                    temp_text.setText("Temperature: "+temperature);
+                    ldr_text.setText("LDR: "+ldr);
+                    id_text.setText("ID: "+id);
+                    gas_text.setText("Gas: "+gas);
 
                 } else {
                     Log.w("Firebase", "Data snapshot doesn't exist");

@@ -38,7 +38,7 @@ public class HumidityFragment extends Fragment {
     FirebaseDatabase database;
     DatabaseReference myRef;
 
-    String humidityValue,date,time,imageUrl;
+    String humidityValue,date,time,imageUrl,autoValue;
 
 
     @Override
@@ -50,6 +50,7 @@ public class HumidityFragment extends Fragment {
 
         init(view);
         currentValue();
+        automaticValue();
 
         btnSave.setOnClickListener(v -> {
             // Get the reference to the specific location in Firebase
@@ -100,6 +101,35 @@ public class HumidityFragment extends Fragment {
                     showImage(imageUrl);
                     date_text.setText("Date: "+date);
                     time_text.setText("Time: "+time);
+//                    ed_humidity.setText(humidityValue);
+
+                } else {
+                    Log.w("Firebase", "Data snapshot doesn't exist");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e("Firebase", "Data fetch cancelled", error.toException());
+            }
+        });
+    }
+
+    private void automaticValue() {
+        DatabaseReference callRef = FirebaseDatabase.getInstance()
+                .getReference()
+                .child("Automatic");
+
+        callRef.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+
+                    autoValue = snapshot.child("SetHumidity").getValue(String.class);
+
+                    ed_humidity.setText(autoValue);
+
 
                 } else {
                     Log.w("Firebase", "Data snapshot doesn't exist");

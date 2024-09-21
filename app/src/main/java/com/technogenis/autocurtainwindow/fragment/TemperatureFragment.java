@@ -50,6 +50,7 @@ public class TemperatureFragment extends Fragment {
 
         init(view);
         currentValue();
+        automaticValue();
 
         btnSave.setOnClickListener(v -> {
             // Get the reference to the specific location in Firebase
@@ -100,6 +101,7 @@ public class TemperatureFragment extends Fragment {
                     showImage(imageUrl);
                     date_text.setText("Date: "+date);
                     time_text.setText("Time: "+time);
+//                    edValue.setText(humidityValue);
 
                 } else {
                     Log.w("Firebase", "Data snapshot doesn't exist");
@@ -113,6 +115,33 @@ public class TemperatureFragment extends Fragment {
         });
     }
 
+    private void automaticValue() {
+        DatabaseReference callRef = FirebaseDatabase.getInstance()
+                .getReference()
+                .child("Automatic");
+
+        callRef.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+
+                   String autoValue = snapshot.child("SetTemp").getValue(String.class);
+
+                    edValue.setText(autoValue);
+
+
+                } else {
+                    Log.w("Firebase", "Data snapshot doesn't exist");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e("Firebase", "Data fetch cancelled", error.toException());
+            }
+        });
+    }
 
     void showImage(String imageUrl){
         ByteArrayOutputStream baos = new ByteArrayOutputStream();

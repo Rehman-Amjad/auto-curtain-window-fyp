@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -50,6 +51,7 @@ public class CurtainFragment extends Fragment {
 
         init(view);
         currentValue();
+        automaticValue();
 
         btnSave.setOnClickListener(v -> {
             // Get the reference to the specific location in Firebase
@@ -67,6 +69,11 @@ public class CurtainFragment extends Fragment {
                         }
                     });
         });
+
+        //        Glide.with(this)
+//                .asGif()
+//                .load(R.drawable.aquarium_one)
+//                .into(gifImageView);
 
         return view;
     }
@@ -96,9 +103,51 @@ public class CurtainFragment extends Fragment {
                     imageUrl = snapshot.child("Img").getValue(String.class);
 
                     humidityValue_text.setText("LDR sensor value: "+humidityValue);
-                    showImage(imageUrl);
+
+
+                    if(Integer.parseInt(humidityValue.trim()) <= 150){
+                        Glide.with(getActivity())
+                                .asGif()
+                                .load(R.drawable.night)
+                                .into(image);
+                    }else{
+                        Glide.with(getActivity())
+                                .asGif()
+                                .load(R.drawable.day)
+                                .into(image);
+                    }
+//                    showImage(imageUrl);
                     date_text.setText("Date: "+date);
                     time_text.setText("Time: "+time);
+                    edValue.setText(humidityValue);
+
+                } else {
+                    Log.w("Firebase", "Data snapshot doesn't exist");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e("Firebase", "Data fetch cancelled", error.toException());
+            }
+        });
+    }
+
+    private void automaticValue() {
+        DatabaseReference callRef = FirebaseDatabase.getInstance()
+                .getReference()
+                .child("Automatic");
+
+        callRef.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+
+                    String autoValue = snapshot.child("SetLDR").getValue(String.class);
+
+                    edValue.setText(autoValue);
+
 
                 } else {
                     Log.w("Firebase", "Data snapshot doesn't exist");

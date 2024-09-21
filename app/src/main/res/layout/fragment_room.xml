@@ -31,6 +31,142 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:gravity="center|start"
+        >
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_id"
+            app:tint="@color/Frozi" />
+
+        <TextView
+            android:id="@+id/id_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textAlignment="textStart"
+            android:textSize="14sp"
+            android:padding="9dp"
+            android:text="ID: please wait" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center|start"
+        >
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/humidity"
+            app:tint="@color/Frozi" />
+
+        <TextView
+            android:id="@+id/humidityValue_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textAlignment="textStart"
+            android:textSize="14sp"
+            android:padding="9dp"
+            android:text="Humidity: please wait" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center|start"
+        >
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/temperature"
+            app:tint="@color/Frozi" />
+
+        <TextView
+            android:id="@+id/temp_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textAlignment="textStart"
+            android:textSize="14sp"
+            android:padding="9dp"
+            android:text="Temperature: please wait" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center|start"
+        >
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_resistor"
+            app:tint="@color/Frozi" />
+
+        <TextView
+            android:id="@+id/gas_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textAlignment="textStart"
+            android:textSize="14sp"
+            android:padding="9dp"
+            android:text="Gas: please wait" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center|start"
+        >
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_ultrasonic_sensor"
+            app:tint="@color/Frozi" />
+
+        <TextView
+            android:id="@+id/ldr_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textAlignment="textStart"
+            android:textSize="14sp"
+            android:padding="9dp"
+            android:text="LDR: please wait" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
         android:gravity="center|start"
         >
 
@@ -80,5 +216,7 @@
 
 
     </LinearLayout>
+
+
 
 </LinearLayout>
